@@ -1,171 +1,269 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-PY">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terrenos en María Auxiliadora | Planes desde Gs. 800.000</title>
+    <title>Éden Loteamiento | Terrenos en María Auxiliadora</title>
     <meta
         name="description"
-        content="Terrenos en Tomás Romero Pereira / María Auxiliadora con ubicación verificable, lote tipo 14 x 40 m, planes desde Gs. 800.000, atención por WhatsApp, carpeta digital y opción de visita o videollamada."
+        content="Terrenos en María Auxiliadora y lotes en Tomás Romero Pereira, Itapúa. Planes desde Gs. 800.000, ubicación verificable y atención directa."
     >
-    <meta property="og:title" content="Terrenos en María Auxiliadora para empezar tu futuro">
-    <meta
-        property="og:description"
-        content="Lotes con ubicación verificable, planes desde Gs. 800.000 y atención directa para compradores locales o remotos."
-    >
+    <meta name="robots" content="index,follow">
+    <!-- Reemplazar por la URL pública final del sitio cuando el dominio esté conectado. -->
+    <link rel="canonical" href="https://example.com/">
+    <meta name="theme-color" content="#183f2b">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23183f2b'/%3E%3Cpath d='M14 45h36M17 37c9-4 21-4 30 0M24 29c5-8 14-10 23-8-2 11-10 19-23 8Z' fill='none' stroke='%23e2b94f' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ctext x='32' y='25' text-anchor='middle' font-size='16' font-family='Arial' font-weight='700' fill='%23fffdf8'%3EEL%3C/text%3E%3C/svg%3E">
+
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_PY">
-    <meta name="theme-color" content="#1d3a2d">
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="preconnect" href="https://tile.openstreetmap.org">
+    <meta property="og:site_name" content="Éden Loteamiento">
+    <meta property="og:title" content="Éden Loteamiento | Terrenos en María Auxiliadora">
+    <meta
+        property="og:description"
+        content="Loteamiento en Itapúa con lotes 14 x 40 m, planes desde Gs. 800.000, ubicación verificable y atención comercial directa."
+    >
+    <!-- Reemplazar por la URL pública final del sitio. -->
+    <meta property="og:url" content="https://example.com/">
+    <!-- Reemplazar por una imagen real del loteamiento o una placa comercial definitiva. -->
+    <meta property="og:image" content="https://example.com/assets/img/og-eden-loteamiento.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Éden Loteamiento | Terrenos en María Auxiliadora">
+    <meta
+        name="twitter:description"
+        content="Terrenos a cuotas en Itapúa con lote tipo 14 x 40 m, ubicación verificable y planes desde Gs. 800.000."
+    >
+    <meta name="twitter:image" content="https://example.com/assets/img/og-eden-loteamiento.jpg">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "Éden Loteamiento",
+        "url": "https://example.com/",
+        "telephone": "+595971141032",
+        "email": "alemateo07@gmail.com",
+        "areaServed": "Tomás Romero Pereira / María Auxiliadora, Itapúa",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "María Auxiliadora",
+            "addressRegion": "Itapúa",
+            "addressCountry": "PY"
+        },
+        "description": "Loteamiento en Itapúa con terrenos en María Auxiliadora y lotes en Tomás Romero Pereira. Planes desde Gs. 800.000 sujetos a disponibilidad y condiciones vigentes."
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@700;900&display=swap"
         rel="stylesheet"
-        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin=""
     >
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+        <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+            <path d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2a9.98 9.98 0 0 0-8.64 15l-1.3 4.73 4.86-1.27A9.96 9.96 0 0 0 12.02 22c5.51 0 9.98-4.46 9.98-9.98a9.9 9.9 0 0 0-2.95-7.08ZM12.02 20.2a8.15 8.15 0 0 1-4.14-1.13l-.3-.18-2.89.76.77-2.82-.19-.3a8.18 8.18 0 1 1 6.75 3.67Zm4.49-5.68c-.25-.13-1.47-.72-1.7-.8-.23-.08-.4-.12-.56.12-.17.25-.65.8-.8.97-.15.17-.3.19-.56.06-.25-.13-1.07-.39-2.04-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.38.11-.51.11-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.09 0 1.23.9 2.42 1.02 2.59.13.17 1.77 2.71 4.29 3.79.6.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.17-.48-.29Z"/>
+        </symbol>
+        <symbol id="icon-pin" viewBox="0 0 24 24">
+            <path d="M12 2a7 7 0 0 0-7 7c0 5.16 5.3 11.63 6.03 12.5a1.25 1.25 0 0 0 1.94 0C13.7 20.63 19 14.16 19 9a7 7 0 0 0-7-7Zm0 9.6A2.6 2.6 0 1 1 12 6.4a2.6 2.6 0 0 1 0 5.2Z"/>
+        </symbol>
+        <symbol id="icon-folder" viewBox="0 0 24 24">
+            <path d="M3 6.5A2.5 2.5 0 0 1 5.5 4H10l2 2h6.5A2.5 2.5 0 0 1 21 8.5v9A2.5 2.5 0 0 1 18.5 20h-13A2.5 2.5 0 0 1 3 17.5v-11Zm2 1v10.1c0 .22.18.4.4.4h13.2c.22 0 .4-.18.4-.4V8.5c0-.28-.22-.5-.5-.5h-7.33l-2-2H5.5c-.28 0-.5.22-.5.5Z"/>
+        </symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24">
+            <path d="M7 2h2v2h6V2h2v2h1.5A2.5 2.5 0 0 1 21 6.5v12a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-12A2.5 2.5 0 0 1 5.5 4H7V2Zm11.5 8h-13v8.5c0 .28.22.5.5.5h12c.28 0 .5-.22.5-.5V10ZM6 8h12V6.5a.5.5 0 0 0-.5-.5H17v1.5h-2V6H9v1.5H7V6h-.5a.5.5 0 0 0-.5.5V8Z"/>
+        </symbol>
+        <symbol id="icon-chat" viewBox="0 0 24 24">
+            <path d="M5.5 4A3.5 3.5 0 0 0 2 7.5v7A3.5 3.5 0 0 0 5.5 18H7v3.16c0 .56.63.9 1.1.59L12.74 18H18.5A3.5 3.5 0 0 0 22 14.5v-7A3.5 3.5 0 0 0 18.5 4h-13Zm0 2h13c.83 0 1.5.67 1.5 1.5v7c0 .83-.67 1.5-1.5 1.5h-6.41l-.52.4L9 18.56V16H5.5A1.5 1.5 0 0 1 4 14.5v-7C4 6.67 4.67 6 5.5 6Z"/>
+        </symbol>
+        <symbol id="icon-lot" viewBox="0 0 24 24">
+            <path d="M3 4h8v8H3V4Zm10 0h8v5h-8V4ZM3 14h5v7H3v-7Zm7 0h11v7H10v-7Zm-5-8v4h4V6H5Zm10 0v1h4V6h-4ZM5 16v3h1v-3H5Zm7 0v3h7v-3h-7Z"/>
+        </symbol>
+        <symbol id="icon-mail" viewBox="0 0 24 24">
+            <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.28l8 5.34 8-5.34V7H4Zm16 10V9.72l-7.44 4.96a1 1 0 0 1-1.12 0L4 9.72V17h16Z"/>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/>
+        </symbol>
+    </svg>
+
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
     <header class="site-header">
         <div class="container header-row">
-            <a class="brand" href="#inicio" aria-label="Ir al inicio">
-                <span class="brand-mark">EL</span>
+            <a class="brand" href="#inicio" aria-label="Ir al inicio de Éden Loteamiento">
+                <span class="brand-logo" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" role="img">
+                        <rect class="logo-bg" x="2" y="2" width="60" height="60" rx="15"></rect>
+                        <path class="logo-furrow" d="M14 45h36M17 37c9-4 21-4 30 0"></path>
+                        <path class="logo-leaf" d="M24 29c5-8 14-10 23-8-2 11-10 19-23 8Z"></path>
+                        <text class="logo-text" x="32" y="26" text-anchor="middle">EL</text>
+                    </svg>
+                </span>
                 <span class="brand-copy">
-                    <strong>Edén Loteamiento</strong>
+                    <strong>Éden Loteamiento</strong>
                     <small>Tomás Romero Pereira / María Auxiliadora</small>
                 </span>
             </a>
 
-            <nav class="site-nav" aria-label="Secciones principales">
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><use href="#icon-menu"></use></svg>
+                </span>
+                <span>Menú</span>
+            </button>
+
+            <nav class="site-nav" id="site-nav" aria-label="Secciones principales">
                 <a href="#inicio">Inicio</a>
                 <a href="#ubicacion">Ubicación</a>
                 <a href="#lotes">Lotes</a>
                 <a href="#como-comprar">Cómo comprar</a>
                 <a href="#confianza">Confianza</a>
                 <a href="#faq">FAQ</a>
-                <a href="#contacto" class="nav-cta">Contacto</a>
+                <a href="#contacto" class="nav-cta" data-contact-action>
+                    <span class="icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><use href="#icon-chat"></use></svg>
+                    </span>
+                    <span>Contacto</span>
+                </a>
             </nav>
         </div>
     </header>
 
     <main id="contenido">
-        <section class="hero" id="inicio">
+        <section class="section hero" id="inicio">
             <div class="container hero-grid">
                 <div class="hero-copy">
                     <p class="eyebrow">Ubicación verificable y atención directa</p>
                     <h1>Terrenos en María Auxiliadora para empezar tu futuro</h1>
                     <p class="hero-text">
-                        Lotes en Tomás Romero Pereira con ubicación verificable, planes desde Gs. 800.000 y atención directa para compradores locales o remotos.
+                        Éden Loteamiento presenta terrenos en María Auxiliadora y lotes en Tomás Romero Pereira con planes desde Gs. 800.000, ubicación verificable y consulta comercial clara.
                     </p>
 
                     <div class="chip-row" aria-label="Datos principales del proyecto">
-                        <span class="chip">Lote tipo 14x40</span>
+                        <span class="chip">Lote tipo 14 x 40 m</span>
                         <span class="chip">560 m</span>
                         <span class="chip">Planes desde Gs. 800.000</span>
-                        <span class="chip">Atención por WhatsApp</span>
+                        <span class="chip">Zona Itapúa</span>
                     </div>
 
                     <div class="hero-actions">
-                        <a
-                            class="btn btn-primary js-whatsapp-link"
-                            href="#contacto"
-                            data-whatsapp-context="Quiero consultar por terrenos en María Auxiliadora"
-                        >
-                            Consultar por WhatsApp
+                        <a class="btn btn-primary btn-contact" href="#contacto" data-contact-action>
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-chat"></use></svg>
+                            </span>
+                            <span>Consultar</span>
                         </a>
-                        <a class="btn btn-secondary js-maps-link" href="https://maps.app.goo.gl/tpnS1MzXkLu2Yi1o7" target="_blank" rel="noopener noreferrer">
-                            Ver ubicación
+                        <a class="btn btn-secondary js-maps-link" href="#" aria-label="Ver ubicación en Google Maps">
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-pin"></use></svg>
+                            </span>
+                            <span>Ver ubicación</span>
                         </a>
-                        <a
-                            class="btn btn-ghost js-whatsapp-link"
-                            href="#contacto"
-                            data-whatsapp-context="Quiero solicitar la carpeta digital del proyecto"
-                        >
-                            Solicitar carpeta digital
+                        <a class="btn btn-ghost btn-contact" href="#contacto" data-contact-action>
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-folder"></use></svg>
+                            </span>
+                            <span>Carpeta digital</span>
                         </a>
                     </div>
                 </div>
 
-                <aside class="hero-panel" aria-label="Resumen comercial">
-                    <div class="hero-panel-card">
-                        <p class="panel-kicker">Compra clara</p>
-                        <h2>Información pensada para avanzar con confianza</h2>
-                        <ul class="hero-points">
-                            <li>Ubicación verificable con acceso directo a Google Maps.</li>
-                            <li>Planes desde Gs. 800.000 sin inventar un precio total no definido.</li>
-                            <li>Atención para consulta local, visita, videollamada o carpeta digital.</li>
-                        </ul>
+                <aside class="card hero-panel">
+                    <p class="panel-kicker">Compra clara</p>
+                    <h2>Información comercial para avanzar con contexto</h2>
+                    <p class="card-text">
+                        Revisá ubicación, medidas, planes de referencia y próximos pasos antes de consultar por disponibilidad.
+                    </p>
 
-                        <div class="hero-stats">
-                            <article class="stat-card">
-                                <strong>Lote tipo</strong>
-                                <span>14 x 40 m</span>
-                            </article>
-                            <article class="stat-card">
-                                <strong>Superficie</strong>
-                                <span>560 m</span>
-                            </article>
-                            <article class="stat-card">
-                                <strong>Estado documental</strong>
-                                <span>Disponible para revisión</span>
-                            </article>
-                        </div>
+                    <div class="stat-grid">
+                        <article class="mini-stat">
+                            <strong>Lote tipo</strong>
+                            <span>14 x 40 m</span>
+                        </article>
+                        <article class="mini-stat">
+                            <strong>Superficie</strong>
+                            <span>560 m</span>
+                        </article>
+                        <article class="mini-stat">
+                            <strong>Planes</strong>
+                            <span>Desde Gs. 800.000</span>
+                        </article>
+                    </div>
+
+                    <ul class="list-clean">
+                        <li>Ubicación verificable con Google Maps.</li>
+                        <li>Carpeta digital disponible para revisión.</li>
+                        <li>Visita o videollamada según tu caso.</li>
+                    </ul>
+
+                    <div class="panel-actions">
+                        <a class="btn btn-secondary" href="#lotes">
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-lot"></use></svg>
+                            </span>
+                            <span>Ver lotes</span>
+                        </a>
+                        <a class="btn btn-primary btn-contact" href="#contacto" data-contact-action>
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-calendar"></use></svg>
+                            </span>
+                            <span>Agendar visita</span>
+                        </a>
                     </div>
                 </aside>
             </div>
         </section>
 
-        <section class="section section-alt" aria-labelledby="segmentos-title">
+        <section class="section section-soft" aria-labelledby="segmentos-title">
             <div class="container">
-                <div class="section-heading">
-                    <p class="eyebrow">Dos perfiles frecuentes</p>
-                    <h2 id="segmentos-title">La consulta cambia según cómo querés comprar</h2>
+                <div class="section-header">
+                    <p class="eyebrow">Perfiles frecuentes</p>
+                    <h2 id="segmentos-title">Dos caminos de compra, una misma necesidad de confianza</h2>
                     <p>
-                        La landing está pensada para quien busca su primer terreno y también para quien necesita decidir desde otra ciudad o desde fuera del país.
+                        El flujo está pensado para quien busca su primer terreno y para quien quiere comprar terreno en María Auxiliadora desde otra ciudad o país.
                     </p>
                 </div>
 
                 <div class="segment-grid">
-                    <article class="segment-card">
-                        <span class="segment-icon" aria-hidden="true">🏡</span>
+                    <article class="card segment-card">
+                        <span class="segment-badge">Primera vivienda</span>
                         <h3>Quiero mi primer terreno</h3>
-                        <p>
-                            Ideal para parejas jóvenes o familias que quieren dar el primer paso con una cuota posible, avanzar a ritmo propio y construir cuando les convenga.
+                        <p class="card-text">
+                            Una opción para parejas o familias que buscan empezar con terrenos a cuotas en Itapúa, ordenar la consulta y construir a ritmo propio.
                         </p>
-                        <ul class="card-list">
-                            <li>Primer terreno con enfoque práctico.</li>
-                            <li>Cuotas claras desde Gs. 800.000.</li>
-                            <li>Consulta directa por WhatsApp sin vueltas.</li>
+                        <ul class="list-clean">
+                            <li>Consulta directa y ordenada.</li>
+                            <li>Planes desde Gs. 800.000.</li>
+                            <li>Ubicación y pasos comerciales claros.</li>
                         </ul>
-                        <a
-                            class="text-link js-whatsapp-link"
-                            href="#interes"
-                            data-whatsapp-context="Quiero mi primer terreno y necesito más información"
-                        >
-                            Consultar esta opción
+                        <a class="btn btn-primary btn-contact" href="#contacto" data-contact-action>
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-chat"></use></svg>
+                            </span>
+                            <span>Consultar</span>
                         </a>
                     </article>
 
-                    <article class="segment-card">
-                        <span class="segment-icon" aria-hidden="true">🌎</span>
+                    <article class="card segment-card">
+                        <span class="segment-badge">Compra remota</span>
                         <h3>Quiero comprar desde lejos</h3>
-                        <p>
-                            Pensado para compradores remotos o paraguayos fuera de la ciudad o del país que necesitan verificar ubicación, revisar carpeta digital y coordinar videollamada antes de consultar.
+                        <p class="card-text">
+                            Para compradores remotos que necesitan ubicación, carpeta digital, videollamada y posibilidad de enviar a un familiar antes de avanzar.
                         </p>
-                        <ul class="card-list">
-                            <li>Fotos, ubicación y contexto del proyecto.</li>
-                            <li>Videollamada y atención remota.</li>
-                            <li>Un familiar puede visitar y acompañar la decisión.</li>
+                        <ul class="list-clean">
+                            <li>Atención remota por WhatsApp.</li>
+                            <li>Fotos, contexto y seguimiento ordenado.</li>
+                            <li>Un familiar puede visitar por vos.</li>
                         </ul>
-                        <a
-                            class="text-link js-whatsapp-link"
-                            href="#interes"
-                            data-whatsapp-context="Quiero comprar desde lejos y necesito carpeta digital o videollamada"
-                        >
-                            Pedir atención remota
+                        <a class="btn btn-secondary btn-contact" href="#contacto" data-contact-action>
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-chat"></use></svg>
+                            </span>
+                            <span>Atención remota</span>
                         </a>
                     </article>
                 </div>
@@ -173,17 +271,17 @@
         </section>
 
         <section class="section" id="ubicacion" aria-labelledby="ubicacion-title">
-            <div class="container location-grid">
+            <div class="container section-grid">
                 <div>
-                    <div class="section-heading section-heading-left">
+                    <div class="section-header section-header-left">
                         <p class="eyebrow">Ubicación</p>
                         <h2 id="ubicacion-title">Ubicación pensada para crecer en Tomás Romero Pereira / María Auxiliadora</h2>
                         <p>
-                            El mapa usa la referencia de ubicación ya presente en el repositorio. Si necesitás validar el punto exacto o compartirlo con otra persona, podés abrir Google Maps de inmediato.
+                            El loteamiento en Itapúa se muestra con referencia de Google Maps para validar el punto, compartirlo y consultar con más contexto.
                         </p>
                     </div>
 
-                    <div class="info-panel">
+                    <div class="card info-card">
                         <div class="info-row">
                             <span>Zona</span>
                             <strong>Tomás Romero Pereira / María Auxiliadora, Itapúa</strong>
@@ -193,253 +291,184 @@
                             <strong>14 x 40 m</strong>
                         </div>
                         <div class="info-row">
+                            <span>Superficie</span>
+                            <strong>560 m</strong>
+                        </div>
+                        <div class="info-row">
                             <span>Planes</span>
                             <strong>Desde Gs. 800.000</strong>
                         </div>
                         <div class="info-row">
-                            <span>Respaldo comercial</span>
-                            <strong>Ubicación, carpeta digital y atención remota</strong>
+                            <span>Documentación</span>
+                            <strong>Disponible para revisión</strong>
                         </div>
                     </div>
 
-                    <div class="location-actions">
-                        <a class="btn btn-primary js-maps-link" href="https://maps.app.goo.gl/tpnS1MzXkLu2Yi1o7" target="_blank" rel="noopener noreferrer">
-                            Abrir en Google Maps
+                    <div class="inline-actions">
+                        <a class="btn btn-secondary js-maps-link" href="#">
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-pin"></use></svg>
+                            </span>
+                            <span>Abrir en Google Maps</span>
                         </a>
-                        <a
-                            class="btn btn-secondary js-whatsapp-link"
-                            href="#contacto"
-                            data-whatsapp-context="Quiero confirmar la ubicación del proyecto"
-                        >
-                            Consultar ubicación
+                        <a class="btn btn-primary btn-contact" href="#contacto" data-contact-action>
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-chat"></use></svg>
+                            </span>
+                            <span>Consultar ubicación</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="map-panel">
-                    <div id="map" class="map-shell" aria-label="Mapa de ubicación del proyecto"></div>
-                    <div class="map-fallback" id="map-fallback">
-                        <p id="map-status">
-                            Si el mapa interactivo no carga, usa el botón para abrir la ubicación en Google Maps.
+                <div class="card map-card">
+                    <div class="map-embed" data-map-embed></div>
+                    <div class="map-meta">
+                        <p class="map-note" data-map-status>
+                            Si el mapa no carga, abrí la ubicación en Google Maps.
                         </p>
-                        <a class="text-link js-maps-link" href="https://maps.app.goo.gl/tpnS1MzXkLu2Yi1o7" target="_blank" rel="noopener noreferrer">
-                            Abrir ubicación verificada
+                        <a class="btn btn-ghost js-maps-link" href="#">
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-pin"></use></svg>
+                            </span>
+                            <span>Ubicación verificada</span>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt" id="lotes" aria-labelledby="lotes-title">
+        <section class="section section-soft" id="lotes" aria-labelledby="lotes-title">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-header">
                     <p class="eyebrow">Lotes</p>
-                    <h2 id="lotes-title">Modelos de consulta listos para editar</h2>
+                    <h2 id="lotes-title">Lotes modelo para consultar disponibilidad</h2>
                     <p>
-                        Los lotes se renderizan desde JavaScript con un arreglo editable. La disponibilidad real y las condiciones finales se confirman al momento de consultar.
+                        Opciones editables desde JavaScript para mantener la landing simple, sin base de datos ni backend.
                     </p>
                 </div>
 
-                <div id="lots-grid" class="lot-grid" aria-live="polite"></div>
-            </div>
-        </section>
+                <div class="lots-grid" id="lots-grid" aria-live="polite"></div>
 
-        <section class="section" id="interes" aria-labelledby="interes-title">
-            <div class="container contact-grid">
-                <div>
-                    <div class="section-heading section-heading-left">
-                        <p class="eyebrow">Simulador de interés</p>
-                        <h2 id="interes-title">Dejá tu perfil y abrí la consulta por WhatsApp</h2>
-                        <p>
-                            Este formulario no envía nada a un backend. Arma el mensaje, guarda un respaldo local y te lleva directo a WhatsApp con los datos listos para conversar.
-                        </p>
-                    </div>
-
-                    <div class="trust-strip">
-                        <article class="mini-card">
-                            <strong>Consulta ordenada</strong>
-                            <span>Nombre, perfil y presupuesto mensual en un solo paso.</span>
-                        </article>
-                        <article class="mini-card">
-                            <strong>Seguimiento local</strong>
-                            <span>El lead queda guardado en el navegador como respaldo.</span>
-                        </article>
-                        <article class="mini-card">
-                            <strong>UTMs incluidas</strong>
-                            <span>Si llegaste por campaña, la referencia viaja en el mensaje.</span>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="form-panel">
-                    <form class="lead-form" data-lead-form data-form-name="interes">
-                        <div class="form-grid">
-                            <div class="field">
-                                <label for="lead-name">Nombre</label>
-                                <input id="lead-name" name="name" type="text" autocomplete="name" required>
-                            </div>
-
-                            <div class="field">
-                                <label for="lead-whatsapp">WhatsApp</label>
-                                <input id="lead-whatsapp" name="whatsapp" type="tel" autocomplete="tel" required>
-                            </div>
-
-                            <div class="field">
-                                <label for="lead-city">Ciudad actual</label>
-                                <input id="lead-city" name="city" type="text" autocomplete="address-level2">
-                            </div>
-
-                            <div class="field">
-                                <label for="lead-profile">Perfil</label>
-                                <select id="lead-profile" name="profile" required>
-                                    <option value="">Seleccionar</option>
-                                    <option value="Primera vivienda">Primera vivienda</option>
-                                    <option value="Comprar desde lejos">Comprar desde lejos</option>
-                                    <option value="Inversión">Inversión</option>
-                                    <option value="Familiar">Familiar</option>
-                                </select>
-                            </div>
-
-                            <div class="field">
-                                <label for="lead-budget">Presupuesto mensual</label>
-                                <select id="lead-budget" name="budget" required>
-                                    <option value="">Seleccionar</option>
-                                    <option value="800.000-1.000.000">800.000-1.000.000</option>
-                                    <option value="1.000.000-1.500.000">1.000.000-1.500.000</option>
-                                    <option value="1.500.000+">1.500.000+</option>
-                                </select>
-                            </div>
-
-                            <div class="field">
-                                <label for="lead-lot">Lote de interés</label>
-                                <select id="lead-lot" name="lot_interest" data-lots-select>
-                                    <option value="">Elegir luego</option>
-                                </select>
-                            </div>
-
-                            <div class="field field-full">
-                                <label for="lead-message">Mensaje</label>
-                                <textarea id="lead-message" name="message" rows="4" placeholder="Contanos si querés visita, videollamada, carpeta digital o más detalles."></textarea>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
-                        <p class="form-note">La consulta se abre en una nueva pestaña de WhatsApp y también queda una copia en tu navegador.</p>
-                        <p class="form-status" data-form-status aria-live="polite"></p>
-                    </form>
+                <div class="support-grid">
+                    <article class="card support-card">
+                        <h3>Medida base comunicada</h3>
+                        <p class="card-text">El lote tipo es de 14 x 40 m, equivalente a 560 m.</p>
+                    </article>
+                    <article class="card support-card">
+                        <h3>Consulta de disponibilidad</h3>
+                        <p class="card-text">La disponibilidad se confirma al momento de consultar, junto con condiciones vigentes.</p>
+                    </article>
+                    <article class="card support-card">
+                        <h3>Planes desde Gs. 800.000</h3>
+                        <p class="card-text">Se comunica plan desde, sin inventar precio total si no está definido.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt" id="como-comprar" aria-labelledby="proceso-title">
+        <section class="section" id="como-comprar" aria-labelledby="proceso-title">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-header">
                     <p class="eyebrow">Cómo comprar</p>
                     <h2 id="proceso-title">Un proceso simple para avanzar con claridad</h2>
                     <p>
-                        La idea es ordenar la consulta y bajar incertidumbre, tanto para quien vive cerca como para quien necesita resolver todo a distancia.
+                        La idea es bajar incertidumbre y ordenar la conversación, tanto para quien vive cerca como para quien necesita resolver todo a distancia.
                     </p>
                 </div>
 
                 <div class="steps-grid">
-                    <article class="step-card">
+                    <article class="card step-card">
                         <span class="step-number">1</span>
                         <h3>Elegís lote</h3>
-                        <p>Revisás opciones modelo y definís por cuál querés consultar primero.</p>
+                        <p class="card-text">Revisás opciones modelo y definís por cuál querés consultar primero.</p>
                     </article>
-                    <article class="step-card">
+                    <article class="card step-card">
                         <span class="step-number">2</span>
                         <h3>Revisás ubicación</h3>
-                        <p>Validás la referencia del proyecto en Google Maps y resolvés dudas de acceso.</p>
+                        <p class="card-text">Validás la referencia del proyecto en Google Maps y despejás dudas básicas.</p>
                     </article>
-                    <article class="step-card">
+                    <article class="card step-card">
                         <span class="step-number">3</span>
                         <h3>Consultás condiciones</h3>
-                        <p>Pedís información comercial sobre planes desde Gs. 800.000 y disponibilidad.</p>
+                        <p class="card-text">Pedís información comercial sobre planes desde Gs. 800.000 y disponibilidad.</p>
                     </article>
-                    <article class="step-card">
+                    <article class="card step-card">
                         <span class="step-number">4</span>
                         <h3>Visita o videollamada</h3>
-                        <p>Coordinás recorrido presencial, videollamada o revisión remota según tu caso.</p>
+                        <p class="card-text">Coordinás recorrido presencial o atención remota según tu caso.</p>
                     </article>
-                    <article class="step-card">
+                    <article class="card step-card">
                         <span class="step-number">5</span>
                         <h3>Revisás documentos</h3>
-                        <p>Solicitás la documentación disponible para revisión y consultás el estado documental.</p>
+                        <p class="card-text">Solicitás la documentación disponible para revisión y consultás el estado documental.</p>
                     </article>
-                    <article class="step-card">
+                    <article class="card step-card">
                         <span class="step-number">6</span>
                         <h3>Reservás o firmás</h3>
-                        <p>Si todo encaja, avanzás con la reserva o con el paso comercial que corresponda.</p>
+                        <p class="card-text">Si todo encaja, avanzás con el paso comercial que corresponda.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="confianza" aria-labelledby="confianza-title">
+        <section class="section section-soft" id="confianza" aria-labelledby="confianza-title">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-header">
                     <p class="eyebrow">Confianza</p>
                     <h2 id="confianza-title">Señales claras para una consulta más segura</h2>
                     <p>
-                        El foco está en mostrar ubicación, condiciones y seguimiento comercial sin prometer documentación aprobada si todavía no fue verificada por el comprador.
+                        Comunicación prudente: ubicación, condiciones, atención remota y documentación disponible para revisión, sin prometer estados no verificados.
                     </p>
                 </div>
 
                 <div class="trust-grid">
-                    <article class="trust-card">
-                        <span class="trust-icon" aria-hidden="true">📍</span>
+                    <article class="card trust-card">
                         <h3>Ubicación verificable</h3>
-                        <p>La ubicación se comparte con enlace directo a Google Maps para que puedas revisar la referencia del proyecto.</p>
+                        <p class="card-text">La referencia se comparte con enlace directo a Google Maps para validar el punto del proyecto.</p>
                     </article>
-                    <article class="trust-card">
-                        <span class="trust-icon" aria-hidden="true">💬</span>
+                    <article class="card trust-card">
                         <h3>Cuotas claras</h3>
-                        <p>La comunicación comercial parte desde planes o cuotas desde Gs. 800.000, sin fijar un precio total no definido.</p>
+                        <p class="card-text">La comunicación parte desde planes desde Gs. 800.000, sin inventar un precio total no definido.</p>
                     </article>
-                    <article class="trust-card">
-                        <span class="trust-icon" aria-hidden="true">📁</span>
+                    <article class="card trust-card">
                         <h3>Carpeta digital</h3>
-                        <p>Podés solicitar fotos, información comercial y documentación disponible para revisión antes de decidir.</p>
+                        <p class="card-text">Podés pedir fotos, datos comerciales y documentación disponible para revisión.</p>
                     </article>
-                    <article class="trust-card">
-                        <span class="trust-icon" aria-hidden="true">🖥️</span>
+                    <article class="card trust-card">
                         <h3>Atención remota</h3>
-                        <p>Si estás fuera de la ciudad o del país, la consulta puede avanzar por WhatsApp, videollamada y seguimiento ordenado.</p>
+                        <p class="card-text">Ideal para compradores fuera de la ciudad o del país que necesitan contexto antes de decidir.</p>
                     </article>
-                    <article class="trust-card">
-                        <span class="trust-icon" aria-hidden="true">🚗</span>
+                    <article class="card trust-card">
                         <h3>Visita guiada</h3>
-                        <p>Podés coordinar visita personal o enviar a un familiar para validar el entorno antes de reservar.</p>
+                        <p class="card-text">Podés coordinar una visita o enviar a un familiar para revisar el entorno.</p>
                     </article>
-                    <article class="trust-card">
-                        <span class="trust-icon" aria-hidden="true">🧾</span>
+                    <article class="card trust-card">
                         <h3>Recibos y seguimiento</h3>
-                        <p>Consultá cómo se realiza el seguimiento comercial y qué comprobantes se entregan en cada etapa.</p>
+                        <p class="card-text">Consultá cómo se realiza el seguimiento comercial y qué comprobantes se entregan en cada etapa.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt" id="faq" aria-labelledby="faq-title">
-            <div class="container faq-layout">
-                <div class="section-heading section-heading-left">
+        <section class="section" id="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <div class="section-header">
                     <p class="eyebrow">FAQ</p>
-                    <h2 id="faq-title">Preguntas que suelen aparecer antes de consultar</h2>
+                    <h2 id="faq-title">Preguntas frecuentes antes de consultar</h2>
                     <p>
-                        El objetivo es resolver dudas rápidas y dejar la conversación de WhatsApp para lo que realmente necesite detalle.
+                        Respuestas breves para entender ubicación, medidas, planes y próximos pasos antes de enviar tu consulta.
                     </p>
                 </div>
 
-                <div class="faq-list" data-faq-list>
+                <div class="faq-card card">
                     <article class="faq-item">
                         <h3>
                             <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-1" id="faq-trigger-1">
-                                ¿Dónde queda?
+                                ¿Dónde queda el loteamiento?
                             </button>
                         </h3>
                         <div id="faq-1" class="faq-panel" role="region" aria-labelledby="faq-trigger-1" hidden>
-                            <p>El proyecto se presenta para Tomás Romero Pereira / María Auxiliadora, Itapúa, con enlace directo a Google Maps para validar la ubicación.</p>
+                            <p>Está ubicado en la zona de Tomás Romero Pereira / María Auxiliadora, Itapúa. Podés validar la referencia desde el enlace de Google Maps.</p>
                         </div>
                     </article>
 
@@ -450,7 +479,7 @@
                             </button>
                         </h3>
                         <div id="faq-2" class="faq-panel" role="region" aria-labelledby="faq-trigger-2" hidden>
-                            <p>El lote tipo comunicado en esta landing es de 14 x 40 m, equivalente a 560 m.</p>
+                            <p>El lote tipo comunicado es de 14 x 40 m, equivalente a 560 m.</p>
                         </div>
                     </article>
 
@@ -461,190 +490,195 @@
                             </button>
                         </h3>
                         <div id="faq-3" class="faq-panel" role="region" aria-labelledby="faq-trigger-3" hidden>
-                            <p>La comunicación base parte desde Gs. 800.000. La disponibilidad y las condiciones finales se confirman al consultar.</p>
+                            <p>Los planes se comunican desde Gs. 800.000. Disponibilidad y condiciones se confirman al consultar.</p>
                         </div>
                     </article>
 
                     <article class="faq-item">
                         <h3>
                             <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-4" id="faq-trigger-4">
-                                ¿Puedo consultar si vivo fuera?
+                                ¿Puedo consultar si vivo fuera de la ciudad o del país?
                             </button>
                         </h3>
                         <div id="faq-4" class="faq-panel" role="region" aria-labelledby="faq-trigger-4" hidden>
-                            <p>Sí. La landing está preparada para compradores remotos que necesiten ubicación, carpeta digital, fotos y seguimiento por WhatsApp.</p>
+                            <p>Sí. La atención puede avanzar por WhatsApp con ubicación, carpeta digital, fotos y videollamada.</p>
                         </div>
                     </article>
 
                     <article class="faq-item">
                         <h3>
                             <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-5" id="faq-trigger-5">
-                                ¿Puedo pedir videollamada?
+                                ¿Puedo pedir videollamada o carpeta digital?
                             </button>
                         </h3>
                         <div id="faq-5" class="faq-panel" role="region" aria-labelledby="faq-trigger-5" hidden>
-                            <p>Sí. Podés pedir videollamada para recorrer la información comercial y resolver dudas antes de avanzar.</p>
+                            <p>Sí. Podés solicitar carpeta digital y coordinar videollamada para revisar la información comercial.</p>
                         </div>
                     </article>
 
                     <article class="faq-item">
                         <h3>
                             <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-6" id="faq-trigger-6">
-                                ¿Qué documentos puedo revisar?
+                                ¿Qué documentos puedo revisar antes de avanzar?
                             </button>
                         </h3>
                         <div id="faq-6" class="faq-panel" role="region" aria-labelledby="faq-trigger-6" hidden>
-                            <p>Podés solicitar la documentación disponible para revisión y consultar el estado documental actualizado antes de reservar.</p>
+                            <p>Podés pedir la documentación disponible para revisión y consultar el estado documental vigente antes de reservar.</p>
                         </div>
                     </article>
 
                     <article class="faq-item">
                         <h3>
                             <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-7" id="faq-trigger-7">
-                                ¿Puedo enviar a un familiar?
+                                ¿Puedo enviar a un familiar a visitar?
                             </button>
                         </h3>
                         <div id="faq-7" class="faq-panel" role="region" aria-labelledby="faq-trigger-7" hidden>
-                            <p>Sí. Un familiar puede visitar el lugar y usar la ubicación compartida para validar acceso y entorno.</p>
+                            <p>Sí. Un familiar puede visitar el lugar y ayudarte a validar el entorno antes de tomar una decisión.</p>
                         </div>
                     </article>
 
                     <article class="faq-item">
                         <h3>
                             <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-8" id="faq-trigger-8">
-                                ¿Cómo reservo?
+                                ¿Cómo hago una reserva?
                             </button>
                         </h3>
                         <div id="faq-8" class="faq-panel" role="region" aria-labelledby="faq-trigger-8" hidden>
-                            <p>La reserva se conversa luego de revisar ubicación, condiciones y documentos disponibles. El paso exacto depende del estado comercial vigente.</p>
+                            <p>Primero se revisan ubicación, disponibilidad, condiciones y documentación disponible. Luego se indica el paso comercial correspondiente.</p>
                         </div>
                     </article>
 
                     <article class="faq-item">
                         <h3>
                             <button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-9" id="faq-trigger-9">
-                                ¿Qué pasa si quiero construir después?
+                                ¿Puedo construir más adelante?
                             </button>
                         </h3>
                         <div id="faq-9" class="faq-panel" role="region" aria-labelledby="faq-trigger-9" hidden>
-                            <p>La propuesta está pensada para quien quiere asegurar terreno primero y construir más adelante, según su ritmo y planificación.</p>
+                            <p>La propuesta está pensada para quien quiere asegurar terreno primero y planificar construcción más adelante.</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section contact-final" id="contacto" aria-labelledby="contacto-title">
-            <div class="container contact-final-grid">
-                <div>
-                    <div class="section-heading section-heading-left">
+        <section class="section contact-section" id="contacto" aria-labelledby="contacto-title">
+            <div class="container">
+                <div class="contact-card-simple card">
+                    <div class="contact-copy">
                         <p class="eyebrow">Contacto</p>
-                        <h2 id="contacto-title">Elegí cómo querés avanzar</h2>
+                        <h2 id="contacto-title">Contactá con Éden Loteamiento</h2>
                         <p>
-                            Podés escribir directo por WhatsApp, pedir carpeta digital, agendar visita o dejar una consulta breve para abrir la conversación con datos ordenados.
+                            Consultá disponibilidad, ubicación y condiciones comerciales por WhatsApp o correo.
                         </p>
                     </div>
 
-                    <div class="contact-stack">
-                        <article class="contact-card">
-                            <h3>WhatsApp directo</h3>
-                            <p>Ideal para pedir disponibilidad, confirmar ubicación o empezar una consulta rápida.</p>
-                            <a
-                                class="btn btn-primary js-whatsapp-link"
-                                href="#"
-                                data-whatsapp-context="Quiero consultar por disponibilidad y condiciones"
-                            >
-                                Consultar por WhatsApp
-                            </a>
-                        </article>
-
-                        <article class="contact-card">
-                            <h3>Ubicación verificada</h3>
-                            <p>Usá la referencia pública del proyecto para revisar el punto y compartirlo con otra persona.</p>
-                            <a class="btn btn-secondary js-maps-link" href="https://maps.app.goo.gl/tpnS1MzXkLu2Yi1o7" target="_blank" rel="noopener noreferrer">
-                                Ver ubicación
-                            </a>
-                        </article>
+                    <div class="contact-actions">
+                        <a
+                            class="btn btn-whatsapp"
+                            href="https://wa.me/595971141032?text=Hola%2C%20quiero%20consultar%20por%20terrenos%20en%20Tom%C3%A1s%20Romero%20Pereira%20%2F%20Mar%C3%ADa%20Auxiliadora.%20Me%20interesa%20conocer%20disponibilidad%2C%20ubicaci%C3%B3n%20y%20planes%20desde%20Gs.%20800.000."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            data-whatsapp-final
+                        >
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-whatsapp"></use></svg>
+                            </span>
+                            <span>Consultar por WhatsApp</span>
+                        </a>
+                        <a
+                            class="btn btn-email"
+                            href="mailto:alemateo07@gmail.com?subject=Consulta%20por%20terrenos%20-%20%C3%89den%20Loteamiento&body=Hola%2C%20quiero%20consultar%20por%20terrenos%20en%20Tom%C3%A1s%20Romero%20Pereira%20%2F%20Mar%C3%ADa%20Auxiliadora.%20Me%20interesa%20conocer%20disponibilidad%2C%20ubicaci%C3%B3n%20y%20planes%20desde%20Gs.%20800.000."
+                            data-email-final
+                        >
+                            <span class="icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24"><use href="#icon-mail"></use></svg>
+                            </span>
+                            <span>Enviar correo</span>
+                        </a>
                     </div>
-                </div>
 
-                <div class="form-panel">
-                    <form class="lead-form lead-form-short" data-lead-form data-form-name="contacto">
-                        <div class="form-grid">
-                            <div class="field">
-                                <label for="contact-name">Nombre</label>
-                                <input id="contact-name" name="name" type="text" autocomplete="name" required>
-                            </div>
-
-                            <div class="field">
-                                <label for="contact-whatsapp">WhatsApp</label>
-                                <input id="contact-whatsapp" name="whatsapp" type="tel" autocomplete="tel" required>
-                            </div>
-
-                            <div class="field">
-                                <label for="contact-profile">Perfil</label>
-                                <select id="contact-profile" name="profile">
-                                    <option value="">Seleccionar</option>
-                                    <option value="Primera vivienda">Primera vivienda</option>
-                                    <option value="Comprar desde lejos">Comprar desde lejos</option>
-                                    <option value="Inversión">Inversión</option>
-                                    <option value="Familiar">Familiar</option>
-                                </select>
-                            </div>
-
-                            <div class="field">
-                                <label for="contact-lot">Lote de interés</label>
-                                <select id="contact-lot" name="lot_interest" data-lots-select>
-                                    <option value="">Elegir luego</option>
-                                </select>
-                            </div>
-
-                            <div class="field field-full">
-                                <label for="contact-message">Mensaje</label>
-                                <textarea id="contact-message" name="message" rows="4" placeholder="Ejemplo: quiero agendar visita o pedir carpeta digital."></textarea>
-                            </div>
+                    <dl class="contact-facts" aria-label="Datos de contacto de Éden Loteamiento">
+                        <div>
+                            <dt>WhatsApp</dt>
+                            <dd>+595 971 141032</dd>
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Agendar visita</button>
-                        <p class="form-note">También podés usar este formulario para pedir videollamada o carpeta digital.</p>
-                        <p class="form-status" data-form-status aria-live="polite"></p>
-                    </form>
+                        <div>
+                            <dt>Correo</dt>
+                            <dd>alemateo07@gmail.com</dd>
+                        </div>
+                        <div>
+                            <dt>Zona</dt>
+                            <dd>Tomás Romero Pereira / María Auxiliadora, Itapúa</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-row">
-            <div>
-                <strong>Edén Loteamiento</strong>
-                <p>Terrenos en Tomás Romero Pereira / María Auxiliadora con consulta directa y ubicación verificable.</p>
+        <div class="container footer-grid">
+            <div class="footer-col footer-brand">
+                <a class="footer-logo" href="#inicio" aria-label="Ir al inicio de Éden Loteamiento">
+                    <span class="brand-logo" aria-hidden="true">
+                        <svg viewBox="0 0 64 64" role="img">
+                            <rect class="logo-bg" x="2" y="2" width="60" height="60" rx="15"></rect>
+                            <path class="logo-furrow" d="M14 45h36M17 37c9-4 21-4 30 0"></path>
+                            <path class="logo-leaf" d="M24 29c5-8 14-10 23-8-2 11-10 19-23 8Z"></path>
+                            <text class="logo-text" x="32" y="26" text-anchor="middle">EL</text>
+                        </svg>
+                    </span>
+                    <span>Éden Loteamiento</span>
+                </a>
+                <p>Loteamiento en Itapúa para quienes buscan terrenos en María Auxiliadora con ubicación verificable y atención comercial directa.</p>
             </div>
-            <div>
-                <p>Lote tipo 14 x 40 m</p>
-                <p>Planes desde Gs. 800.000</p>
+
+            <div class="footer-col">
+                <h2>Contacto</h2>
+                <p>WhatsApp: +595 971 141032</p>
+                <p>Correo: alemateo07@gmail.com</p>
             </div>
-            <div>
-                <p>Documentación disponible para revisión.</p>
-                <p><span id="footer-year"></span> · Landing estática HTML, CSS y JavaScript.</p>
+
+            <div class="footer-col">
+                <h2>Ubicación</h2>
+                <p>Tomás Romero Pereira / María Auxiliadora, Itapúa.</p>
+                <p><a class="js-maps-link" href="#">Abrir ubicación en Google Maps</a></p>
             </div>
+
+            <div class="footer-col">
+                <h2>Enlaces</h2>
+                <nav class="footer-links" aria-label="Enlaces de pie de página">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#ubicacion">Ubicación</a>
+                    <a href="#lotes">Lotes</a>
+                    <a href="#como-comprar">Cómo comprar</a>
+                    <a href="#confianza">Confianza</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#contacto" data-contact-action>Contacto</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="container footer-legal">
+            <p>La información comercial está sujeta a disponibilidad, verificación documental y condiciones vigentes.</p>
+            <p>© 2026 Éden Loteamiento. Todos los derechos reservados. Desarrollado para Mateo Schreiber.</p>
         </div>
     </footer>
 
     <a
-        class="mobile-whatsapp js-whatsapp-link"
+        class="floating-whatsapp"
         href="#contacto"
-        data-whatsapp-context="Quiero consultar por terrenos en María Auxiliadora"
-        aria-label="Consultar por WhatsApp"
+        data-contact-action
+        aria-label="Ir a contacto"
     >
-        WhatsApp
+        <span class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><use href="#icon-whatsapp"></use></svg>
+        </span>
+        <span class="floating-label">WhatsApp</span>
     </a>
 
-    <script
-        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""
-    ></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

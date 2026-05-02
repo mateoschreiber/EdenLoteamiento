@@ -1,33 +1,67 @@
 # Eden Loteamiento - Landing estatica
 
-Este repositorio ya no usa Django como parte funcional de la landing publica. La salida principal es una web 100% estatica hecha con:
+Este repositorio mantiene una landing 100% estatica con:
 
 - `index.html`
 - `assets/css/styles.css`
 - `assets/js/main.js`
 
-La landing esta enfocada en captar leads para compradores de terrenos/lotes en Tomas Romero Pereira / Maria Auxiliadora, Itapua, con foco en:
+No usa Django, backend, frameworks ni build tools para la salida publica.
 
-- parejas jovenes o familias que buscan su primer terreno
-- compradores remotos o paraguayos fuera de la ciudad o del pais
+## Flujo de contacto
 
-## Estructura activa
+Todos los CTAs comerciales llevan al bloque final en `#contacto`.
 
-```text
-EdenLoteamiento/
-|- index.html
-|- assets/
-|  |- css/
-|  |  |- styles.css
-|  |- js/
-|     |- main.js
-|- legacy-django/         # solo referencia historica, no se usa para ejecutar la landing
-|- README.md
+El bloque final tiene solo dos acciones principales:
+
+- `Consultar por WhatsApp`
+- `Enviar correo`
+
+El WhatsApp y el correo se configuran en [assets/js/main.js](/C:/Users/MaSch/Documents/EdenLoteamiento/assets/js/main.js:1):
+
+```js
+const WHATSAPP_NUMBER = "595971141032";
+const CONTACT_EMAIL = "alemateo07@gmail.com";
 ```
 
-## Como ejecutar
+## Mapa
 
-No hace falta instalar Django, base de datos ni backend.
+La landing usa Google Maps embebido, no Leaflet ni OpenStreetMap.
+
+Constantes editables:
+
+```js
+const GOOGLE_MAPS_EMBED_URL = "https://www.google.com/maps?q=-26.494759,-55.273071&z=15&output=embed";
+const GOOGLE_MAPS_SHARE_URL = "https://maps.app.goo.gl/tpnS1MzXkLu2Yi1o7";
+```
+
+## Colores, fuentes y espaciados
+
+La identidad visual vive en [assets/css/styles.css](/C:/Users/MaSch/Documents/EdenLoteamiento/assets/css/styles.css:1).
+
+Variables principales:
+
+- `--space-1`
+- `--space-2`
+- `--space-3`
+- `--space-4`
+- `--space-5`
+- `--space-6`
+- `--space-7`
+- `--color-primary`
+- `--color-primary-2`
+- `--color-accent`
+- `--color-agro`
+- `--color-earth`
+- `--color-maize`
+- `--font-heading`
+- `--font-body`
+
+## Lotes
+
+Los lotes demo se editan en el arreglo `LOTES` dentro de [assets/js/main.js](/C:/Users/MaSch/Documents/EdenLoteamiento/assets/js/main.js:1).
+
+## Como probar la landing
 
 Opcion 1:
 
@@ -37,7 +71,7 @@ Opcion 2:
 
 - servirlo con cualquier servidor estatico
 
-Ejemplo opcional:
+Ejemplo:
 
 ```bash
 python -m http.server 8000
@@ -49,121 +83,6 @@ Luego abrir:
 http://127.0.0.1:8000/
 ```
 
-Ese comando solo sirve archivos estaticos. No es una dependencia del proyecto.
+## Nota
 
-## Que hace la landing
-
-- muestra la propuesta comercial con H1, ubicacion, lotes y FAQ
-- usa botones de WhatsApp con mensaje prearmado
-- renderiza lotes demo desde un arreglo editable en JavaScript
-- arma consultas desde formularios frontend sin backend
-- guarda una copia del lead en `localStorage`
-- captura parametros `utm_*` de la URL y los agrega al mensaje de WhatsApp
-- muestra mapa interactivo con Leaflet y fallback a Google Maps
-
-## Datos comerciales actuales
-
-- ubicacion comercial base: `https://maps.app.goo.gl/tpnS1MzXkLu2Yi1o7`
-- coordenadas reutilizadas del repo original: `-26.494759, -55.273071`
-- lote tipo: `14 x 40 m`
-- superficie comunicada: `560 m`
-- planes desde: `Gs. 800.000`
-
-## Como cambiar el numero de WhatsApp
-
-Editar en [assets/js/main.js](/C:/Users/MaSch/Documents/EdenLoteamiento/assets/js/main.js:1):
-
-```js
-const WHATSAPP_NUMBER = "595XXXXXXXXX";
-```
-
-Usar formato internacional, sin `+`, espacios ni guiones.
-
-## Como cambiar la ubicacion
-
-Editar en [assets/js/main.js](/C:/Users/MaSch/Documents/EdenLoteamiento/assets/js/main.js:2):
-
-```js
-const GOOGLE_MAPS_URL = "https://maps.app.goo.gl/tpnS1MzXkLu2Yi1o7";
-```
-
-Y, si cambia el punto del mapa, editar tambien:
-
-```js
-const MAP_COORDINATES = {
-    lat: -26.494759,
-    lng: -55.273071,
-};
-```
-
-No reemplazar esas coordenadas por valores inventados. Confirmar primero el punto real.
-
-## Como editar lotes
-
-Editar el arreglo `LOTES` en [assets/js/main.js](/C:/Users/MaSch/Documents/EdenLoteamiento/assets/js/main.js:15).
-
-Cada objeto controla:
-
-- identificador visible
-- tamano
-- superficie
-- plan desde
-- estado
-- resumen comercial
-
-## Como publicar
-
-### Cloudflare Pages
-
-1. Subir el repositorio a GitHub.
-2. Crear un proyecto nuevo en Cloudflare Pages.
-3. Conectar el repositorio.
-4. Configurar:
-
-```text
-Build command: (vacio)
-Build output directory: /
-```
-
-5. Publicar.
-
-### Netlify
-
-1. Importar el repositorio.
-2. Dejar vacio el comando de build.
-3. Publicar el directorio raiz.
-
-### GitHub Pages
-
-1. Subir el repositorio.
-2. Ir a `Settings > Pages`.
-3. Elegir `Deploy from a branch`.
-4. Publicar desde la rama principal y la carpeta raiz.
-
-## Checklist antes de produccion
-
-- reemplazar el numero real de WhatsApp
-- confirmar coordenadas reales del proyecto
-- reemplazar o agregar imagenes reales si se van a usar
-- revisar textos de disponibilidad y condiciones
-- revisar documentacion legal y estado documental antes de publicar
-- conectar dominio
-- probar formularios y CTAs en movil
-- validar que Google Maps y WhatsApp abran correctamente
-
-## Nota sobre Django
-
-La landing actual no necesita:
-
-- `manage.py`
-- apps Django
-- templates
-- models
-- forms
-- views
-- migrations
-- settings
-- URLs
-- base de datos
-
-Si existe una carpeta `legacy-django/`, queda solo como referencia historica y no forma parte de la ejecucion publica de la landing.
+Cualquier carpeta historica del proyecto anterior queda fuera del flujo de ejecucion. La landing actual solo necesita los archivos estaticos listados arriba.
