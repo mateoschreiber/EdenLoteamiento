@@ -12,7 +12,6 @@ public/                              Único directorio publicado
   sitemap.xml                        URL indexable
   site.webmanifest                   Metadatos de instalación
   assets/css/styles.20260722b.css
-  assets/js/main.20260722.js
   assets/img/og-eden-loteamiento.jpg
 src/index.js                         Redirecciones, caché, CSP y 404
 scripts/validate-site.ps1            Validación local
@@ -41,4 +40,4 @@ npx wrangler dev
 
 ## Cloudflare
 
-El Worker consolida `www`, HTTP e `/index.html`, aplica headers de seguridad y caché. El HTML usa `Cache-Control: no-transform` para impedir que Cloudflare inyecte Web Analytics o JavaScript Detections, evitando conflictos con CSP y bloqueadores del navegador.
+El Worker consolida `www`, HTTP e `/index.html`, aplica headers de seguridad y caché. El HTML usa `Cache-Control: no-transform` para impedir inyecciones automáticas. El JavaScript mínimo está integrado con un hash CSP exacto para evitar falsos avisos del monitoreo `report-only` de Cloudflare y ahorrar una solicitud móvil.

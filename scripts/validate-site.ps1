@@ -11,7 +11,6 @@ $requiredFiles = @(
     "sitemap.xml",
     "site.webmanifest",
     "assets/css/styles.20260722b.css",
-    "assets/js/main.20260722.js",
     "assets/img/og-eden-loteamiento.jpg"
 )
 $errors = [System.Collections.Generic.List[string]]::new()
@@ -35,7 +34,7 @@ if (Test-Path -LiteralPath $indexPath) {
         @{ Name = "sin fotos pendientes"; Valid = $html -notmatch 'Solicitá fotos|fotos actuales' },
         @{ Name = "OG local"; Valid = $html -match 'https://edenloteamientos\.com/assets/img/og-eden-loteamiento\.jpg' },
         @{ Name = "CSS existente"; Valid = $html -match '/assets/css/styles\.20260722b\.css' },
-        @{ Name = "JS existente"; Valid = $html -match '/assets/js/main\.20260722\.js' }
+        @{ Name = "JS integrado"; Valid = $html -match '<script id="site-script">' -and $html -notmatch '<script[^>]+src=' }
     )
 
     foreach ($check in $checks) {
@@ -73,6 +72,13 @@ if (Test-Path -LiteralPath $workerPath) {
     if ($worker -notmatch 'max-age=0, must-revalidate, no-transform') { $errors.Add("HTML sin protección no-transform contra inyección automática") }
     if ($worker -match "unsafe-inline") { $errors.Add("CSP permite unsafe-inline") }
     if ($worker -match 'static\.cloudflareinsights\.com') { $errors.Add("CSP conserva dependencia del beacon automático") }
+    if (Test-Path -LiteralPath $indexPath) {
+        $inlineScript = [regex]::Match($html, '<script id="site-script">(.*?)</script>', 'Singleline').Groups[1].Value
+        $sha256 = [Security.Cryptography.SHA256]::Create()
+        try { $scriptHash = [Convert]::ToBase64String($sha256.ComputeHash([Text.Encoding]::UTF8.GetBytes($inlineScript))) }
+        finally { $sha256.Dispose() }
+        if ($worker -notmatch [regex]::Escape("'sha256-$scriptHash'")) { $errors.Add("Hash CSP del script integrado desactualizado") }
+    }
 }
 
 foreach ($relativePath in @("README.md", "wrangler.jsonc", ".env", "db.sqlite3")) {

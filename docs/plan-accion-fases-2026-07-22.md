@@ -30,10 +30,11 @@
 
 ## Fase 4 — Rendimiento y calidad — Completada
 
-- HTML, CSS y JavaScript propios livianos; sin frameworks ni fuentes externas.
+- HTML, CSS y JavaScript integrado con hash CSP; sin frameworks ni fuentes externas.
 - CSS versionado para evitar caché obsoleta.
 - Script de validación para archivos, enlaces, JSON-LD, SEO, servicios, correo omitido y CSP.
 - Worker compilado con Wrangler y respuesta local verificada con CSP y `no-transform` correctos.
+- El script propio no genera falsos positivos en la política `report-only` de Continuous script monitoring.
 
 ## Acciones externas deliberadamente pospuestas
 
