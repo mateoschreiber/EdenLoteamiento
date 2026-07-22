@@ -1,7 +1,7 @@
 const CANONICAL_HOST = "edenloteamientos.com";
 
 const SECURITY_HEADERS = {
-  "Content-Security-Policy": "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+  "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
   "Cross-Origin-Opener-Policy": "same-origin-allow-popups",
   "Cross-Origin-Resource-Policy": "same-origin",
   "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
@@ -47,20 +47,18 @@ export default {
 
     if (assetResponse.status >= 400) {
       headers.delete("Location");
-      headers.set("Cache-Control", "no-store");
+      headers.set("Cache-Control", "no-store, no-transform");
       headers.set("X-Robots-Tag", "noindex, nofollow");
     } else if (url.pathname.startsWith("/assets/")) {
       headers.set("Cache-Control", "public, max-age=31536000, immutable");
     } else if (contentType.includes("text/html")) {
-      headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+      headers.set("Cache-Control", "public, max-age=0, must-revalidate, no-transform");
       headers.set("Link", `<https://${CANONICAL_HOST}/>; rel=\"canonical\"`);
     } else {
       headers.set("Cache-Control", "public, max-age=3600, must-revalidate");
     }
 
-    if (!isCanonicalHost) {
-      headers.set("X-Robots-Tag", "noindex, nofollow");
-    }
+    if (!isCanonicalHost) headers.set("X-Robots-Tag", "noindex, nofollow");
 
     return new Response(assetResponse.body, {
       status: assetResponse.status,

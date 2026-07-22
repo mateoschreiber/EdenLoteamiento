@@ -1,85 +1,43 @@
-# Plan de acción aplicado
+# Plan de acción — Éden Loteamiento
 
-**Base:** auditoría del 22/07/2026.
+**Actualizado:** 22 de julio de 2026
+**Estado:** fases locales completadas
 
-**Objetivo:** resolver SEO técnico, rapidez móvil, UI, confianza, conversión, accesibilidad y despliegue sin introducir datos comerciales no verificados.
+## Fase 1 — SEO técnico y seguridad — Completada
 
-## Fase 1 — SEO técnico y rastreo
+- Host canónico, HTTPS e `/index.html` consolidados con redirecciones 308.
+- `title`, descripción, canonical, Open Graph, Twitter Card, robots, sitemap y JSON-LD válidos.
+- Un solo `h1` con la búsqueda local “Terrenos en María Auxiliadora”.
+- 404 no indexable, headers de seguridad y caché inmutable para activos.
+- CSP estricta sin `unsafe-inline`.
+- `Cache-Control: no-transform` en HTML para evitar la inyección automática de Cloudflare que causaba errores CSP y `ERR_BLOCKED_BY_CLIENT`.
 
-**Estado:** aplicado en el repositorio.
+## Fase 2 — Contenido y conversión — Completada
 
-- Canonical, Open Graph, Twitter Card y JSON-LD usan `https://edenloteamientos.com/`.
-- Tarjeta social propia de 1200 × 630 px con texto verificado.
-- `robots.txt`, `sitemap.xml` y manifest añadidos.
-- Un solo `h1`, contenido local claro y unidades corregidas a `m²`.
-- Lotes ficticios eliminados; la disponibilidad se comunica como dato a confirmar.
-- FAQ visible sin depender de JavaScript y schema `FAQPage` coherente.
+- Medidas, superficie, ubicación y referencia comercial visibles.
+- Acceso a agua, energía eléctrica y caminos comunicado para el 100% del loteamiento.
+- CTAs directos a WhatsApp, llamada y Google Maps con mensajes contextuales.
+- Correo y envío por email omitidos por decisión actual.
+- FAQ visible y datos estructurados sincronizados.
 
-## Fase 2 — Despliegue, caché y seguridad
+## Fase 3 — UI, móvil y accesibilidad — Completada
 
-**Estado:** aplicado en código; requiere publicar la nueva versión.
+- Hero más corto, keyword visible y CTA principal adelantado.
+- Diseño responsive sin dependencias visuales externas.
+- Controles táctiles de al menos 44 px, foco visible, menú con Escape/cierre exterior y navegación por teclado.
+- Mapa cargado solo por interacción y secciones fuera de pantalla diferidas.
+- Botón flotante abre WhatsApp directamente.
 
-- Salida pública aislada en `public/`.
-- Worker para redirigir HTTP y `www` al HTTPS canónico.
-- Previews bajo otro hostname reciben `noindex`.
-- Activos versionados con caché inmutable anual.
-- HTML con revalidación y documentos auxiliares con caché corta.
-- CSP, HSTS, `nosniff`, política de referencia, permisos y protección contra iframes.
-- README, configuración y restos históricos quedan fuera del artefacto publicado.
+## Fase 4 — Rendimiento y calidad — Completada
 
-## Fase 3 — UI, conversión y confianza
+- HTML, CSS y JavaScript propios livianos; sin frameworks ni fuentes externas.
+- CSS versionado para evitar caché obsoleta.
+- Script de validación para archivos, enlaces, JSON-LD, SEO, servicios, correo omitido y CSP.
+- Worker compilado con Wrangler y respuesta local verificada con CSP y `no-transform` correctos.
 
-**Estado:** aplicado con la información disponible.
+## Acciones externas deliberadamente pospuestas
 
-- Hero más corto y propuesta precisa.
-- Aclaración visible de que Gs. 800.000 es una referencia comercial cuyos términos deben confirmarse.
-- CTA principal, flotante y contextuales abren WhatsApp directamente.
-- Teléfono y correo accionables.
-- Flujo reducido a información, ubicación, cuatro pasos, compra remota, FAQ y contacto.
-- Esquema visual rotulado como referencial para no simular un plano real.
-- Mensajes técnicos y de demostración eliminados.
-- Solicitud explícita de plano, fotos actuales, identificación, condiciones y documentos.
-
-## Fase 4 — Rapidez y móvil
-
-**Estado:** aplicado.
-
-- Eliminadas las siete variantes de Google Fonts; se usan fuentes del sistema.
-- Mapa cargado únicamente por interacción.
-- Secciones inferiores usan `content-visibility`.
-- CSS y JS propios siguen sin frameworks ni dependencias.
-- Botones táctiles de 44–56 px y CTA flotante compatible con áreas seguras.
-- Menú con Escape, cierre exterior y devolución de foco.
-- Diseño apilado y simplificado para 320–430 px.
-- Movimiento reducido respetado.
-
-## Fase 5 — Medición y control de calidad
-
-**Estado:** aplicado parcialmente; la captura de datos depende de la herramienta analítica elegida.
-
-- Eventos preparados para WhatsApp, llamada, correo, mapa y FAQ mediante `dataLayer` y Cloudflare Zaraz si está habilitado.
-- Script local comprueba estructura, referencias, SEO y archivos públicos.
-- Objetivos: LCP ≤ 2,5 s, INP ≤ 200 ms y CLS ≤ 0,1 en percentil 75 móvil.
-
-## Acciones externas pendientes
-
-Estas acciones no pueden completarse sin activos reales o acceso a servicios:
-
-1. Publicar la nueva versión y asociar `edenloteamientos.com` y `www.edenloteamientos.com` al mismo Worker.
-2. Habilitar Always Use HTTPS o confirmar la redirección del Worker desde HTTP.
-3. Añadir fotografías actuales y plano aprobado cuando el propietario los entregue; no se usaron imágenes falsas.
-4. Reemplazar Gmail por un correo `@edenloteamientos.com` cuando exista.
-5. Completar razón social, RUC, responsable y documentación solo con datos verificados.
-6. Conectar Search Console, Bing Webmaster Tools y Google Business Profile; enviar el sitemap.
-7. Activar Zaraz o GA4 para consumir los eventos ya definidos.
-8. Medir Core Web Vitals reales después de acumular tráfico.
-
-## Criterios de cierre
-
-- Validación local sin errores.
-- Ninguna referencia a `example.com` ni textos de demostración.
-- Archivos internos inaccesibles tras el despliegue.
-- HTTP y `www` redirigen permanentemente al host canónico.
-- OG image, sitemap y robots responden `200`.
-- CTAs abren el destino esperado.
-- Prueba móvil y teclado sin bloqueos.
+- Fotografías reales, galería y plano aprobado: incorporar solo cuando el propietario entregue activos verificables y optimizados.
+- Correo bajo dominio y formularios de email: omitidos por ahora.
+- Search Console, perfil de Google Business y medición de Core Web Vitals reales: requieren acceso a cuentas externas.
+- Despliegue: debe realizarse después del commit; no forma parte de este cambio local.
