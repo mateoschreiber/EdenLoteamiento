@@ -1,14 +1,14 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "edenloteamiento",
-  "compatibility_date": "2026-05-02",
+  "main": "./src/index.js",
+  "compatibility_date": "2026-07-22",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
-  },
-  "compatibility_flags": [
-    "nodejs_compat"
-  ]
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  }
 }

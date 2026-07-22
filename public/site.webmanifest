@@ -1,0 +1,10 @@
+{
+  "name": "Éden Loteamiento",
+  "short_name": "Éden",
+  "description": "Terrenos en María Auxiliadora, Itapúa.",
+  "lang": "es-PY",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf2",
+  "theme_color": "#123f2a"
+}
