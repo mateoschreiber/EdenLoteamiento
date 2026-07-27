@@ -10,7 +10,7 @@ $requiredFiles = @(
     "robots.txt",
     "sitemap.xml",
     "site.webmanifest",
-    "assets/css/styles.20260722b.css",
+    "assets/css/styles.20260727.css",
     "assets/img/og-eden-loteamiento.jpg"
 )
 $errors = [System.Collections.Generic.List[string]]::new()
@@ -33,7 +33,7 @@ if (Test-Path -LiteralPath $indexPath) {
         @{ Name = "sin correo"; Valid = $html -notmatch 'mailto:|alemateo07@gmail\.com|"email"' },
         @{ Name = "sin fotos pendientes"; Valid = $html -notmatch 'Solicitá fotos|fotos actuales' },
         @{ Name = "OG local"; Valid = $html -match 'https://edenloteamientos\.com/assets/img/og-eden-loteamiento\.jpg' },
-        @{ Name = "CSS existente"; Valid = $html -match '/assets/css/styles\.20260722b\.css' },
+        @{ Name = "CSS existente"; Valid = $html -match '/assets/css/styles\.20260727\.css' },
         @{ Name = "JS integrado"; Valid = $html -match '<script id="site-script">' -and $html -notmatch '<script[^>]+src=' }
     )
 
@@ -64,7 +64,7 @@ $notFoundPath = Join-Path $publicRoot "404.html"
 if (Test-Path -LiteralPath $notFoundPath) {
     $notFoundHtml = Get-Content -Raw -LiteralPath $notFoundPath
     if ($notFoundHtml -notmatch '<meta name="robots" content="noindex,follow">') { $errors.Add("404.html debe declarar noindex,follow") }
-    if ($notFoundHtml -notmatch '/assets/css/styles\.20260722b\.css') { $errors.Add("404.html usa CSS obsoleto") }
+    if ($notFoundHtml -notmatch '/assets/css/styles\.20260727\.css') { $errors.Add("404.html usa CSS obsoleto") }
 }
 
 if (Test-Path -LiteralPath $workerPath) {
